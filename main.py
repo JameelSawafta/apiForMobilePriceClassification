@@ -7,17 +7,6 @@ import pandas as pd
 
 app = FastAPI()
 
-data0 = [{
-    "tytle": "Mobile Price Classification",
-    "description": "This is a very fancy project, with FastAPI and Heroku",
-    "version": "0.1.0"
-},
-{
-    "tytle": "Mobile Price Classification",
-    "description": "This is a very fancy project, with FastAPI and Heroku",
-    "version": "0.1.0"
-}
-    ]
 
 # Load the model
 model = pickle.load(open('model.pkl','rb'))
@@ -62,7 +51,7 @@ def predict(data):
 # Define the home page
 @app.get('/')
 def index():
-    return data0
+    return "HELLO!"
 
 # Define the post method
 @app.post('/predict')
